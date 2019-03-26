@@ -1,6 +1,6 @@
 package sg.dex.oceanscript.ast;
 
-import com.oracle.truffle.api.nodes.Node;
+import com.oracle.truffle.api.frame.VirtualFrame;
 
 /**
  * Base class for OceanScript AST nodes
@@ -8,6 +8,8 @@ import com.oracle.truffle.api.nodes.Node;
  * @author Mike
  * @param T The type of values produced by this Node
  */
-public abstract class ANode<T> extends Node {
+public abstract class ANode<T> {
+
+    public abstract T execute(VirtualFrame virtualFrame);
 
 }

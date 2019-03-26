@@ -1,5 +1,7 @@
 package sg.dex.oceanscript.ast;
 
+import com.oracle.truffle.api.frame.VirtualFrame;
+
 /**
  * AST node representing a constant
  * 
@@ -17,6 +19,11 @@ public class ConstantNode<T> extends ANode<T> {
 
 	public static <T> ANode<T> create(T value) {
 		return new ConstantNode<T>(value);
+	}
+
+	@Override
+	public T execute(VirtualFrame virtualFrame) {
+		return value;
 	}
 
 }
